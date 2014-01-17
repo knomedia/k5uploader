@@ -1,0 +1,23 @@
+{
+  "name": "K5Uploader",
+  "version": "0.0.1",
+  "authors": [
+    "Jason Madsen <knomedia@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "1.7.2",
+    "requirejs": null,
+    "underscore": "1.5.2"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "almond": "~0.2"
+  }
+}

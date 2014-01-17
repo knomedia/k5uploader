@@ -1,0 +1,9 @@
+{
+  "framework": "qunit",
+  "src_files": [
+    "bower_components/requirejs/require.js",
+    "main.js",
+    "test/**/*.spec.js"
+  ]
+}
+
