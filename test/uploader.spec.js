@@ -4,7 +4,7 @@ require([
   'kaltura_settings'
 ], function(Uploader, KalturaRequestBuilder, KalturaSettings) {
 
-  module('KalturaRequestBuilder', {
+  module('Uploader', {
     setup: function() {
       settings = new KalturaSettings();
       conf = {
@@ -21,9 +21,8 @@ require([
     }
   });
 
-  test('holds settings, url, and file', function() {
-    uploader = new Uploader();
-    uploader.send( requestBuilder );
+  test('dispatches error messages appropriately', function() {
+    //TODO: how to test async upload events
     ok(true);
   });
 

@@ -63,7 +63,6 @@ require(['upload_result'], function(UploadResult) {
   test('handles no token', function() {
     var xml = '<xml><result><result_ok></result_ok></result></xml>'
     this.result.parseXML(xml);
-    debugger
     equal(this.result.token, undefined, 'returns undefined when no token');
   });
 });

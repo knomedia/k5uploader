@@ -7,7 +7,8 @@ require.config({
     }
   },
   paths: {
-    "underscore": "../bower_components/underscore/underscore-min"
+    "underscore": "../bower_components/underscore/underscore-min",
+    "jquery": "../bower_components/jquery/jquery"
   }
 });
 
