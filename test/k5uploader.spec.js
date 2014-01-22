@@ -5,7 +5,11 @@ require(['k5uploader'], function(K5Uploader) {
   });
 
   test('sanity', function() {
-    var ku = new K5Uploader();
+    var opts = {
+      sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
+      uploadUrl: 'http://localhost:3000/proxy',
+    }
+    var ku = new K5Uploader(opts);
     ok( ku );
   });
 });

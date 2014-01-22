@@ -14,10 +14,5 @@ require(['kaltura_request_builder'], function(KalturaRequestBuilder) {
     equal(requestBuilder.getSettings(), 'set');
   });
 
-  test('buildRequest uses default url if none give', function() {
-    KalturaRequestBuilder.defaultUrl = '/default/url/';
-    requestBuilder.buildRequest('set', 'file');
-    equal(requestBuilder.getUrl(), '/default/url/');
-  });
 
 });

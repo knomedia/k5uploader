@@ -7,7 +7,8 @@ require.config({
     }
   },
   paths: {
-    "underscore": "../bower_components/underscore/underscore-min"
+    "underscore": "../bower_components/underscore/underscore-min",
+    "jquery": "../bower_components/jquery/jquery"
   }
 });
 
@@ -19,22 +20,26 @@ require([
   'session_manager'
 ], function(K5, Uploader, KSettings, mBus, SessionManager){
 
-  opts = {
-    sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
-    uploadUrl: 'http://localhost:3000/proxy',
-  }
-  var k5 = new K5(opts);
-  var file = new Blob(['hello world'], {type: 'text/plain'});
+  var input = document.getElementById('upload_file');
+  input.addEventListener('change', doUpload);
+  function doUpload(e) {
+    var opts = {
+      sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
+      uploadUrl: 'http://localhost:3000/index.php/partnerservices2/upload',
+    }
+    var k5 = new K5(opts);
+    var file = new Blob(['hello world'], {type: 'text/plain'});
 
-  mBus.addListener('Uploader.progress', function(event){
-    console.log(event.type);
-  });
-  mBus.addListener('Uploader.load', function(event){
-    console.log(event);
-  });
+    mBus.addListener('Uploader.progress', function(event){
+      console.log(event.type);
+    });
+    mBus.addListener('Uploader.load', function(event){
+      console.log(event);
+    });
 
-  k5.onReady = function() {
-    this.uploadFile(file);
+    k5.onReady = function() {
+      this.uploadFile(file);
+    }
   }
 
 });
