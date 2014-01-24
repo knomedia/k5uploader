@@ -35,12 +35,13 @@ require([
       var prc = Math.round((e.loaded / e.total) * 100);
       prog.style.width = prc + '%';
       lbl.innerHTML = prc + '%';
+      alert('saw progress');
     }
 
     var file = this.files[0]
 
     var k5 = new K5(opts);
-    k5.addListener('K5.progress', onProg);
+    k5.addEventListener('K5.progress', onProg);
     k5.onReady = function() {
       this.uploadFile(file);
     }
