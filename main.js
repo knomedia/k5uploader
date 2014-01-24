@@ -27,16 +27,20 @@ require([
       sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
       uploadUrl: 'http://localhost:3000/index.php/partnerservices2/upload',
     }
+
+    function onProg(e) {
+      var prog = document.getElementById('prog');
+      var lbl = document.getElementById('prog-label');
+      console.log('setting width');
+      var prc = Math.round((e.loaded / e.total) * 100);
+      prog.style.width = prc + '%';
+      lbl.innerHTML = prc + '%';
+    }
+
+    var file = this.files[0]
+
     var k5 = new K5(opts);
-    var file = new Blob(['hello world'], {type: 'text/plain'});
-
-    mBus.addListener('Uploader.progress', function(event){
-      console.log(event.type);
-    });
-    mBus.addListener('Uploader.load', function(event){
-      console.log(event);
-    });
-
+    k5.addListener('K5.progress', onProg);
     k5.onReady = function() {
       this.uploadFile(file);
     }

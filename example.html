@@ -5,12 +5,34 @@
   <script src="bower_components/requirejs/require.js" type="text/javascript" charset="utf-8"></script>
   <script src="main.js" type="text/javascript" charset="utf-8"></script>
   <title>Example</title>
+  <style type="text/css" media="screen">
+    #prog {
+      width: 0%;
+    }
+    .inner-bar {
+      width: 100%;
+      background: blue;
+      border-radius: 5px;
+      height: 20px;
+    }
+    #prog-label {
+      float: right;
+      color: grey;
+      font-size: 0.8em;
+      font-family: 'Helvetica Neue';
+    }
+  </style
 </head>
 <body>
   <p>Try it out</p>
   <form>
     <input type='file' id='upload_file' />
   </form>
+
+  <div id='prog'>
+    <div class='inner-bar'></div>
+    <span id='prog-label'></span>
+  </div>
 
 </body>
 </html>
