@@ -35,7 +35,6 @@ require([
       var prc = Math.round((e.loaded / e.total) * 100);
       prog.style.width = prc + '%';
       lbl.innerHTML = prc + '%';
-      alert('saw progress');
     }
 
     var file = this.files[0]
