@@ -41,9 +41,9 @@ require([
 
     var k5 = new K5(opts);
     k5.addEventListener('K5.progress', onProg);
-    k5.onReady = function() {
+    k5.addEventListener('K5.ready', function(){
       this.uploadFile(file);
-    }
+    });
   }
 
 });
