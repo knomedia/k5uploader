@@ -24,8 +24,8 @@ require([
   input.addEventListener('change', doUpload);
   function doUpload(e) {
     var opts = {
-      sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
-      uploadUrl: 'http://localhost:3000/index.php/partnerservices2/upload',
+      sessionUrl: 'http://localhost:3001/proxy/kaltura_session',
+      uploadUrl: 'http://localhost:3001/index.php/partnerservices2/upload',
     }
 
     function onProg(e) {
