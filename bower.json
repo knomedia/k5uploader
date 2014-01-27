@@ -6,8 +6,7 @@
   ],
   "dependencies": {
     "jquery": "1.7.2",
-    "requirejs": null,
-    "underscore": "1.5.2"
+    "requirejs": null
   },
   "license": "MIT",
   "ignore": [
