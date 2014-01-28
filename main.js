@@ -37,6 +37,13 @@ require([
 
     var k5 = new K5(opts);
     k5.addEventListener('K5.progress', onProg);
+    k5.addEventListener('K5.error', function(e){
+      alert('there was an error uploading the file');
+    });
+    k5.addEventListener('K5.complete', function(e){
+      console.log('upload process complete');
+      console.log(e);
+    });
     k5.addEventListener('K5.ready', function(){
       this.uploadFile(file);
     });
