@@ -21,7 +21,10 @@ require([
       sessionUrl: 'http://localhost:3001/proxy/kaltura_session',
       uploadUrl: 'http://localhost:3001/index.php/partnerservices2/upload',
       entryUrl: 'http://localhost:3001/index.php/partnerservices2/addEntry',
-      uiconfUrl: 'http://localhost:3001/index.php/partnerservices2/getuiconf'
+      uiconfUrl: 'http://localhost:3001/index.php/partnerservices2/getuiconf',
+      entryDefaults: {
+        partnerData: "{'context_code': 'course_1', 'root_account_id':1}",
+      }
     }
 
     function onProg(e) {
