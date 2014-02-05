@@ -7,9 +7,8 @@ require(['kaltura_request_builder'], function(KalturaRequestBuilder) {
   });
 
   test('holds settings, url, and file', function() {
-    expect(3);
+    expect(2);
     requestBuilder.buildRequest('set', 'file', 'url');
-    equal(requestBuilder.getUrl(), 'url');
     equal(requestBuilder.getFile(), 'file');
     equal(requestBuilder.getSettings(), 'set');
   });

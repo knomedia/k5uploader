@@ -10,6 +10,6 @@ require(['k5uploader'], function(K5Uploader) {
       uploadUrl: 'http://localhost:3000/proxy',
     }
     var ku = new K5Uploader(opts);
-    ok( ku );
+    ok( true );
   });
 });
