@@ -65,4 +65,12 @@ require(['upload_result'], function(UploadResult) {
     this.result.parseXML(xml);
     equal(this.result.token, undefined, 'returns undefined when no token');
   });
+
+  test('asEntryParams serializes all needed keys', function() {
+    expect(3);
+    var eParams = this.result.asEntryParams();
+    ok(eParams.entry1_name != undefined, 'entry1_name');
+    ok(eParams.entry1_filename != undefined, 'entry1_filename');
+    ok(eParams.entry1_realFilename != undefined, 'entry1_realFilename');
+  });
 });
