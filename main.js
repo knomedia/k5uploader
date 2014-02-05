@@ -9,10 +9,10 @@ require.config({
 require([
   'k5uploader',
   'uploader',
-  'kaltura_settings',
+  'kaltura_session',
   'message_bus',
   'session_manager'
-], function(K5, Uploader, KSettings, mBus, SessionManager){
+], function(K5, Uploader, KalturaSession, mBus, SessionManager){
 
   var input = document.getElementById('upload_file');
   input.addEventListener('change', doUpload);
