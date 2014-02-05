@@ -6,7 +6,7 @@ require([
 
   module('Uploader', {
     setup: function() {
-      settings = new KalturaSession();
+      session = new KalturaSession();
       conf = {
         ks: 'ZjE5ZTY2=',
         subp_id: '101',
@@ -14,10 +14,10 @@ require([
         uid: '5_2',
         serverTime: 1389914786
       }
-      settings.setSession(conf)
-      requestBuilder = new KalturaRequestBuilder();
-      file = new Blob(['hello world'], {type: 'text/plain'});
-      requestBuilder.buildRequest(settings, file, 'url');
+      session.setSession(conf)
+      //requestBuilder = new KalturaRequestBuilder();
+      //file = new Blob(['hello world'], {type: 'text/plain'});
+      //requestBuilder.buildRequest(settings, file, 'url');
     }
   });
 

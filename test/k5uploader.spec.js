@@ -9,7 +9,7 @@ require(['k5uploader'], function(K5Uploader) {
       sessionUrl: 'http://localhost:3000/proxy/kaltura_session',
       uploadUrl: 'http://localhost:3000/proxy',
     }
-    var ku = new K5Uploader(opts);
+    // TODO: mock services and do a high level integration test
     ok( true );
   });
 });

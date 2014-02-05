@@ -3,7 +3,7 @@ require(['ui_config'], function(UiConfig) {
     setup: function() {
       uiConf = new UiConfig({
         maxUploads: 1,
-        maxFileSize: 2,
+        maxFileSize: 1,
         maxTotalSize: 3
       });
     }
@@ -25,6 +25,7 @@ require(['ui_config'], function(UiConfig) {
     equal(uiConf.fileFilters.length, 2, 'adds file filters');
 
   });
+
   test('filterFor', function() {
     expect(2);
     var first = stubFilter(false);
@@ -40,6 +41,11 @@ require(['ui_config'], function(UiConfig) {
     uiConf.addFileFilter(good);
     result = uiConf.filterFor('doesnt matter method is stubbed');
     equal(result, good, 'returns filter that has extension');
+  });
+
+  test('canUpload', function() {
+    var res = uiConf.canUpload((1024*1204) + 1); // 1 byte above 1MB
+    equal(res, false, 'correctly looks at limits');
   });
 
 });
