@@ -18,10 +18,11 @@ require([
   input.addEventListener('change', doUpload);
   function doUpload(e) {
     var opts = {
+      allowedMediaTypes: ['video', 'audio'],
       sessionUrl: 'http://localhost:3001/proxy/kaltura_session',
-      uploadUrl: 'http://localhost:3001/index.php/partnerservices2/upload',
-      entryUrl: 'http://localhost:3001/index.php/partnerservices2/addEntry',
-      uiconfUrl: 'http://localhost:3001/index.php/partnerservices2/getuiconf',
+      uploadUrl: 'http://eu.instructuremedia.com/index.php/partnerservices2/upload',
+      entryUrl: 'http://eu.instructuremedia.com/index.php/partnerservices2/addEntry',
+      uiconfUrl: 'http://eu.instructuremedia.com/index.php/partnerservices2/getuiconf',
       entryDefaults: {
         partnerData: "{'context_code': 'course_1', 'root_account_id':1}",
       }
@@ -49,6 +50,10 @@ require([
     });
     k5.addEventListener('K5.ready', function(){
       this.uploadFile(file);
+    });
+    k5.addEventListener('K5.fileError', function(e) {
+      console.log('File is not acceptable');
+      console.log(e);
     });
   }
 

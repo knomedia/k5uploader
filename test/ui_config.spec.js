@@ -1,4 +1,4 @@
-require(['ui_config'], function(UiConfig) {
+require(['ui_config', 'file_filter'], function(UiConfig, FileFilter) {
   module('UiConfig', {
     setup: function() {
       uiConf = new UiConfig({
@@ -14,6 +14,20 @@ require(['ui_config'], function(UiConfig) {
       includesExtension: function(ext) {
         return withExtension;
       }
+    }
+  }
+
+  function createFileFilter(type, extensions) {
+    return new FileFilter({
+      extensions: extensions,
+      id: type
+    });
+  }
+
+  function stubFile(name, size) {
+    return {
+      name: name,
+      size: size
     }
   }
 
@@ -43,8 +57,32 @@ require(['ui_config'], function(UiConfig) {
     equal(result, good, 'returns filter that has extension');
   });
 
-  test('canUpload', function() {
-    var res = uiConf.canUpload((1024*1204) + 1); // 1 byte above 1MB
+
+  test('acceptableFile - type', function() {
+    expect(3);
+    var acceptedTypes = ['video', 'audio'];
+    var res;
+
+    uiConf.addFileFilter(createFileFilter('video', '*.mov;*.ogg' ));
+    uiConf.addFileFilter(createFileFilter('audio', '*.mp3;*.aif' ));
+
+    var file = stubFile('testing.mov', 1234);
+    res = uiConf.acceptableFile(file, acceptedTypes);
+    equal(res, true, 'verifies correct file types');
+
+    file.name = 'testing.mp3';
+    res = uiConf.acceptableFile(file, acceptedTypes);
+    equal(res, true, 'verifies correct file types');
+
+    file.name = 'testing.doc';
+    res = uiConf.acceptableFile(file, acceptedTypes);
+    equal(res, false, 'rejects incorrect file types');
+  });
+
+  test('acceptableFile - size', function() {
+    var file = stubFile('testfile.mp3', ((1024*1025) + 1)); // 1 byte about 1MB
+    uiConf.addFileFilter(createFileFilter('audio', '*.mp3;*.aif' ));
+    var res = uiConf.acceptableFile(file, ['audio']); // 1 byte above 1MB
     equal(res, false, 'correctly looks at limits');
   });
 
