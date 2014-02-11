@@ -1,5 +1,5 @@
 {
-  "name": "K5Uploader",
+  "name": "k5uploader",
   "version": "0.0.1",
   "authors": [
     "Jason Madsen <knomedia@gmail.com>"
@@ -10,13 +10,13 @@
   },
   "license": "MIT",
   "ignore": [
-    "**/.*",
-    "node_modules",
     "bower_components",
+    "node_modules",
     "test",
-    "tests"
-  ],
-  "devDependencies": {
-    "almond": "~0.2"
-  }
+    "config.js",
+    "example.html",
+    "example.js",
+    "package.json",
+    "testem.json"
+  ]
 }
