@@ -8,9 +8,9 @@ A javascript based uploader for kaltura.
 
 ## Considerations
 
-1. This uploader uses javascript, you may need to set up CORS on kaltura instance to use. By default kaltura does not have such headers.
+1. This uploader uses javascript, you may need to set up CORS with your kaltura instance to use it. By default kaltura does not have such headers.
 
-2. The uploader uses [xhr2](http://caniuse.com/#feat=xhr2). Evergreen browsers support it today. Your support needs may limit your ability to use it.
+2. The uploader uses xhr2. [Evergreen browsers support it today](http://caniuse.com/#feat=xhr2). Your support needs may limit your ability to use it.
 
 ## Usage
 
@@ -26,7 +26,7 @@ var opts = {
   entryUrl: 'http://kaltura_box.com/index.php/partnerservices2/addEntry',
   uiconfUrl: 'http://kaltura_box.com/index.php/partnerservices2/getuiconf',
   entryDefaults: {
-    partnerData: "some custom serialized data here",
+    partnerData: "optional custom serialized data here",
   }
 };
 
@@ -54,10 +54,21 @@ The K5Uploader dispatches several events during the upload process. Listen to th
 | `K5.complete` | upload is complete |
 | `K5.error` | error uploading file or adding upload via `entryUrl` |
 
+### Dealing with events
+
+In order to register an event handler, the `K5Uploader` includes the following methods:
+
+```javascript
+k5Uploader.addEventListener(eventName, callback);
+k5Uploader.removeEventListener(eventName, callback)
+```
+
 ## Notes on kaltura sessions
 
 Add the appropriate `sessionUrl` to return the following kaltura session information:
 
 * `ks`: kaltura session id
 * `subp_id`: valid kaltura subpartner id
-* ``
+* `partner_id`: valid kaltura partner id
+* `uid`:  valid kaltura uid
+* `serverTime`: optional timestamp from session
