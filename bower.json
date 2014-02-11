@@ -8,6 +8,7 @@
     "jquery": "1.7.2",
     "requirejs": null
   },
+  "main": "main.js",
   "license": "MIT",
   "ignore": [
     "bower_components",
