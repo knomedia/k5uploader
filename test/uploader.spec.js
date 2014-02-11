@@ -1,7 +1,7 @@
 require([
-  'uploader',
-  'kaltura_request_builder',
-  'kaltura_session'
+  './uploader',
+  './kaltura_request_builder',
+  './kaltura_session'
 ], function(Uploader, KalturaRequestBuilder, KalturaSession) {
 
   module('Uploader', {

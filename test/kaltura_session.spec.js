@@ -1,4 +1,4 @@
-require(['kaltura_session'], function(KalturaSession) {
+require(['./kaltura_session'], function(KalturaSession) {
 
   module('KalturaSession', {
     setup: function() {

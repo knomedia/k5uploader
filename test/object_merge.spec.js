@@ -1,4 +1,4 @@
-require(['object_merge'], function(objectMerge) {
+require(['./object_merge'], function(objectMerge) {
   module('object_merge', {});
 
   test('returns undefined when no argument', function() {

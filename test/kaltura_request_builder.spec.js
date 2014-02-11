@@ -1,4 +1,4 @@
-require(['kaltura_request_builder'], function(KalturaRequestBuilder) {
+require(['./kaltura_request_builder'], function(KalturaRequestBuilder) {
 
   module('KalturaRequestBuilder', {
     setup: function() {

@@ -1,4 +1,4 @@
-require(['messenger'], function(Messenger) {
+require(['./messenger'], function(Messenger) {
   module('Messenger', {});
 
   test('Messenger.decorate adds methods', function() {

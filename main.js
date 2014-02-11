@@ -1,6 +1,4 @@
-require.config({
-  baseUrl: './lib/',
-  paths: {
-    "jquery": "../bower_components/jquery/jquery"
-  }
+define('k5uploader', ['./lib/k5uploader'], function(K5Uploader) {
+  return K5Uploader;
 });
+

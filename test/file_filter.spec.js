@@ -1,4 +1,4 @@
-require(['file_filter'], function(FileFilter) {
+require(['./file_filter'], function(FileFilter) {
 
   module('FileFilter', {
     setup: function() {

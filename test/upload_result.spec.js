@@ -1,4 +1,4 @@
-require(['upload_result'], function(UploadResult) {
+require(['./upload_result'], function(UploadResult) {
   module('UploadResults', {
     setup: function() {
       this.result = new UploadResult()

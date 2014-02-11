@@ -1,4 +1,4 @@
-require(['xml_parser'], function(XmlParser) {
+require(['./xml_parser'], function(XmlParser) {
   module('XmlParser', {
     setup: function() {
       xmlParser = new XmlParser();

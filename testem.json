@@ -2,7 +2,7 @@
   "framework": "qunit",
   "src_files": [
     "bower_components/requirejs/require.js",
-    "test/main.js",
+    "test/config.js",
     "test/**/*.spec.js"
   ]
 }

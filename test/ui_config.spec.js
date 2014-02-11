@@ -1,4 +1,4 @@
-require(['ui_config', 'file_filter'], function(UiConfig, FileFilter) {
+require(['./ui_config', './file_filter'], function(UiConfig, FileFilter) {
   module('UiConfig', {
     setup: function() {
       uiConf = new UiConfig({

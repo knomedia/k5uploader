@@ -1,4 +1,4 @@
-require(['k5uploader'], function(K5Uploader) {
+require(['./k5uploader'], function(K5Uploader) {
   module('K5Uploader Sanity', {
     setup: function() {
     }

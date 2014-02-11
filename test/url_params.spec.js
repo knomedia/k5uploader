@@ -1,4 +1,4 @@
-require(['url_params'], function(urlParams) {
+require(['./url_params'], function(urlParams) {
 
   module('url_params', {});
 

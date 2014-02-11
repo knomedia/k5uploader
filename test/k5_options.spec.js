@@ -1,4 +1,4 @@
-require(['k5_options'], function(k5Options) {
+require(['./k5_options'], function(k5Options) {
   module('k5Options', {
     setup: function() {
     }
