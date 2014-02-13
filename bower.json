@@ -1,11 +1,13 @@
 {
   "name": "k5uploader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Jason Madsen <knomedia@gmail.com>"
   ],
   "dependencies": {
-    "jquery": "1.7.2",
+    "jquery": "1.7.2"
+  },
+  "devDependencies": {
     "requirejs": null
   },
   "main": "main.js",
