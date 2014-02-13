@@ -5,7 +5,7 @@
     "Jason Madsen <knomedia@gmail.com>"
   ],
   "dependencies": {
-    "jquery": "1.7.2"
+    "jquery": "2.0.3"
   },
   "devDependencies": {
     "requirejs": null
