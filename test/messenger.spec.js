@@ -32,4 +32,11 @@ require(['./messenger'], function(Messenger) {
     messenger.dispatchEvent('test.event');
     equal(called, false, 'removes callback');
   });
+
+  test('addEventListener', function() {
+    var messenger = new Messenger();
+    var result = messenger.addEventListener('test.event', undefined);
+    equal(result, false, 'dont add listeners when callback undefined');
+  });
+
 });
