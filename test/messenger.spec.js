@@ -57,4 +57,23 @@ require(['./messenger'], function(Messenger) {
     equal(foo, 'foo', 'removes all callbacks');
   });
 
+  test('destroy', function() {
+    var called = false;
+    var foo = 'foo';
+    function callback() {
+      called = true;
+    }
+    function otherCallback() {
+      foo = 'bar';
+    }
+    var messenger = new Messenger();
+    messenger.addEventListener('test.event', callback);
+    messenger.addEventListener('other.event', otherCallback);
+    messenger.destroy('test.event');
+    messenger.dispatchEvent('test.event');
+    messenger.dispatchEvent('other.event');
+    equal(called, false, 'removes callbacks');
+    equal(foo, 'foo', 'removes all callbacks');
+  });
+
 });
