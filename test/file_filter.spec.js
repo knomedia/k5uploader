@@ -13,8 +13,9 @@ require(['./file_filter'], function(FileFilter) {
   });
 
   test('includesExtension', function() {
-    expect(2);
+    expect(3);
     equal(ff.includesExtension('gif'), true, 'finds included extensions');
+    equal(ff.includesExtension('GIF'), true, 'is case insensitive');
     equal(ff.includesExtension('blrg'), false, 'doesnt find non extensions');
   });
 
